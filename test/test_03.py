@@ -19,7 +19,6 @@ model = model.to('cpu')
 
 def test():
     inputs, label = random.choice(val_dataset)
-    inputs = inputs.view(1, -1)
     outputs = model(inputs)
     _, predicted = torch.max(outputs.data, 1)
     return label, predicted.item()
